@@ -24,6 +24,7 @@ alias dotfiles="cd ~/.dotfiles"
 # git aliases
 alias gs="git status"
 alias gall="git add ."
+alias gl="git log"
 
 # Needs to be a function because `alias -` breaks
 function -() { cd - }
