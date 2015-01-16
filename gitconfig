@@ -1,6 +1,6 @@
 [user]
-  name = Gabe Berke-Williams
-  email = gabebw@gabebw.com
+  name = Katherine Abu Hadal
+  email = katherine8@verizon.net
 [core]
   editor = vim
   whitespace = trailing-space,cr-at-eol
@@ -38,6 +38,8 @@
   next = !git add . && git rebase --continue
   pr = !git push -u && gh pull-request
   g = grep --break --heading --line-number
+  gs = git status
+  gall = git add .
 
   # Check out a pull request by number: g co-pr 123
   co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
@@ -94,8 +96,8 @@
   plain = black
   meta = cyan
   frag = magenta bold
-  old = red
-  new = green
+  old = red bold
+  new = green bold
   commit = yellow
 [color "status"]
   # Options:

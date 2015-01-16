@@ -1,25 +1,63 @@
-# This file allows new tmux windows/panes to open in the last-cd'ed-directory of
-# their session. It is scoped to the session, so new panes in the `foo` session
-# don't auto-cd to the same place as new panes in the `bar` session.
+###########
+# ALIASES #
+###########
+alias q="vim ~/.zshrc"
+alias qq="source ~/.zshrc"
+alias cp="cp -iv"
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias ls="ls -FGh"
+alias du="du -cksh"
+alias df="df -h"
+# Use modern regexps for sed, i.e. "(one|two)", not "\(one\|two\)"
+alias sed="sed -E"
+[[ -x $(which colordiff) ]] && alias diff="colordiff -u" || alias diff="diff -u"
 
-TMUX_PROJECT_DIRECTORY="$HOME/.tmux-project-directory"
+# correctly interpret ASCII color escapes
+alias less="less -R"
 
-mkdir -p "$TMUX_PROJECT_DIRECTORY"
+alias prettyjson="python -m json.tool"
+alias prettyxml="xmllint --format -"
 
-function current-project-path() {
-  echo "$TMUX_PROJECT_DIRECTORY/`current-tmux-session`"
+alias dotfiles="cd ~/.dotfiles"
+
+# Needs to be a function because `alias -` breaks
+function -() { cd - }
+
+# Global aliases
+alias -g G="| grep "
+alias -g ONE="| awk '{ print \$1}'"
+
+# Psh, "no nodename or servname not provided". I'll do `whois
+# http://google.com/` if I want.
+function whois() {
+  command whois $(echo $1 | sed -e 's|https?://||' -e 's|/||g')
 }
 
-cdpath=($HOME/code $HOME/code/* $HOME/code/whetstone $HOME/code/thoughtbot/*)
+function al { ls -t | head -n ${1:-10}; }
 
-function chpwd {
-  echo $(pwd) >! "`current-project-path`"
-}
-
-current() {
-  if [[ -f "`current-project-path`" ]]; then
-    cd "$(cat "`current-project-path`")"
+# icopy http://something.com/flip.jpg flip.jpg
+# or
+# icopy ./something.gif
+icopy() {
+  path_or_url="$1"
+  basename_path=$(basename "$path_or_url")
+  filename="${2:-$basename_path}"
+  if [[ "$path_or_url" =~ "^http" ]]; then
+    local_filename="$(basename "$filename")"
+    echo $local_filename
+    curl -o "$local_filename" "$path_or_url" && \
+      rsync -e ssh -azh --ignore-existing "$local_filename" "i:~/images/$filename" && \
+      rm -f "$local_filename"
+  else
+    # Not a URL
+    rsync -e ssh -azh --ignore-existing "$path_or_url" "i:~/images/$filename"
   fi
 }
 
-current
+serve() {
+  port="${1:-3000}"
+  echo "Serving on http://localhost:$port"
+  echo "\n\n"
+  ruby -run -e httpd . -p $port
+}
