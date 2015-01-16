@@ -21,6 +21,10 @@ alias prettyxml="xmllint --format -"
 
 alias dotfiles="cd ~/.dotfiles"
 
+# git aliases
+alias gs="git status"
+alias gall="git add ."
+
 # Needs to be a function because `alias -` breaks
 function -() { cd - }
 
