@@ -27,3 +27,5 @@ call s:SourceConfigFilesIn('rcplugins') " after Vundle loads
 filetype plugin indent on
 syntax on
 colorscheme jellybeans
+
+hi Visual term=reverse cterm=reverse guibg=Grey
