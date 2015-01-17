@@ -16,6 +16,12 @@ nnoremap <Leader>n :40Vexplore<CR>
 
 nnoremap <Leader>g :Ag<Space>
 
+" Turn off arrow keys
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
 " Buffer navigation
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
