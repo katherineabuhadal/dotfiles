@@ -31,6 +31,9 @@ nnoremap <C-h> <C-W>h
 " Remap :w to <Leader>s
 nnoremap <Leader>s <esc>:w<CR>
 
+" Autoindent the whole file and return to current line
+map <leader>i mmgg=G`m<cr>
+
 " Disable K looking stuff up
 nnoremap K <Nop>
 " no ex mode
