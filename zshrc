@@ -4,6 +4,9 @@ BASE="$HOME/.dotfiles/zsh"
 source $BASE/tmux.zsh
 ensure_we_are_inside_tmux
 
+stty start undef
+stty stop undef
+
 CORE=(
   completion
   key_bindings

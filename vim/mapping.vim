@@ -3,6 +3,7 @@ nnoremap <Leader>cd :cd %:p:h <CR>
 
 " Opens a file with the current working directory already filled in so you have to specify only the filename.
 nnoremap <Leader>e :e <C-R>=escape(expand("%:p:h"), ' ') . "/" <CR>
+nnoremap <Leader>s :split <C-R>=escape(expand("%:p:h"), ' ') . "/" <CR>
 nnoremap <Leader>v :vsplit <C-R>=escape(expand("%:p:h"), ' ') . "/" <CR>
 
 " ReRun last command
@@ -21,8 +22,9 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 nnoremap <C-h> <C-W>h
 
-"Remap :w to <C-s>
-nnoremap <Leader>s <esc>:w<CR>
+" Remap :w to <C-s>
+map <C-s>s <esc>:w<CR>
+imap <C-s>s <esc>:w<CR>
 
 " Disable K looking stuff up
 nnoremap K <Nop>
