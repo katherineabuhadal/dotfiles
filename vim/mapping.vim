@@ -34,6 +34,9 @@ nnoremap <Leader>s <esc>:w<CR>
 " Autoindent the whole file and return to current line
 map <leader>i mmgg=G`m<cr>
 
+" Add new line but stay in esc mode
+nnoremap <S-o> jO<Esc>2k<CR>
+
 " Disable K looking stuff up
 nnoremap K <Nop>
 " no ex mode
