@@ -43,7 +43,7 @@ _short_colored_git_status() {
     pending) letter="●";;
     staged) letter="●";;
     untracked) letter="●";;
-    unchanged) letter="●";;
+    unchanged) letter="";;
   esac
 
   if [[ -n "$letter" ]]; then
