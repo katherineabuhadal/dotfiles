@@ -39,10 +39,10 @@ _short_colored_git_status() {
   local letter
   local separator=" "
   case $(_git_status) in
-    changed) letter="C";;
-    pending) letter="P";;
-    staged) letter="S";;
-    untracked) letter="UT";;
+    changed) letter="●";;
+    pending) letter="●";;
+    staged) letter="●";;
+    untracked) letter="●";;
     unchanged) letter="";;
   esac
 
@@ -71,7 +71,7 @@ _color_based_on_git_status() {
 
     case "$current_git_status" in
       changed) echo "$(_red $1)" ;;
-      staged) echo "$(_yellow $1)" ;;
+      staged) echo "$(_magenta $1)" ;;
       untracked) echo "$(_cyan $1)" ;;
       unchanged) echo "$(_green $1)" ;;
     esac
