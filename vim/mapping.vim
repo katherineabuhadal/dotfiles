@@ -49,6 +49,10 @@ map <leader>i mmgg=G`m<cr>
 " Rehash with 1.9 style hash syntax - thanks jsteiner
 nmap <leader>rh :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
 
+" Duplicate a selection - thanks jsteiner
+" Visual mode: D
+vmap D y'>p
+
 " Add new line but stay in esc mode
 nnoremap <S-o> jO<Esc>2k<CR>
 
