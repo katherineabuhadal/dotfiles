@@ -46,6 +46,9 @@ nnoremap <Leader>s <esc>:w<CR>
 " Autoindent the whole file and return to current line
 map <leader>i mmgg=G`m<cr>
 
+" Rehash with 1.9 style hash syntax - thanks jsteiner
+nmap <leader>rh :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
+
 " Add new line but stay in esc mode
 nnoremap <S-o> jO<Esc>2k<CR>
 
