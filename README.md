@@ -13,13 +13,5 @@ These are my dotfiles: `~/.*`
 
 ## Nice to have
 
-These don't relate to my dotfiles at all, but I keep forgetting to install them
-on new machines.
-
-* [Dropbox](https://www.dropbox.com/install)
-* [1Password](https://agilebits.com/onepassword) (from the Mac App Store)
-
-## Any Questions?
-
-I'm happy to answer questions about these dotfiles. Hit me up
-[@gabebw](https://twitter.com/gabebw).
+Remap Caps Lock to `esc` with
+[Seil](https://pqrs.org/osx/karabiner/seil.html.en).
