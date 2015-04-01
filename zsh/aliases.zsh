@@ -33,6 +33,9 @@ function -() { cd - }
 alias -g G="| grep "
 alias -g ONE="| awk '{ print \$1}'"
 
+#bundle exec
+alias be="bundle exec"
+
 # Psh, "no nodename or servname not provided". I'll do `whois
 # http://google.com/` if I want.
 function whois() {
