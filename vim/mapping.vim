@@ -51,6 +51,9 @@ nnoremap <S-o> jO<Esc>2k<CR>
 
 " Disable K looking stuff up
 nnoremap K <Nop>
+
+nnoremap a <Nop>
+"
 " no ex mode
 map Q <Nop>
 
