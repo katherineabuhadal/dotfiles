@@ -12,7 +12,6 @@ CORE=(
   editor
   aliases
   path
-  fasd
   options
   prompt
   ruby
@@ -40,7 +39,6 @@ done
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export PATH
-current
 
 export DYLD_LIBRARY_PATH=/usr/local/mysql/lib:$DYLD_LIBRARY_PATH
 
