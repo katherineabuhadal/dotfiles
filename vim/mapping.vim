@@ -59,3 +59,6 @@ map Q <Nop>
 
 " Typo
 nnoremap :Nohl :nohlsearch
+
+" Delete comments (thanks jsteiner)
+nmap <leader>c :%s/^\s*#.*$//g<CR>:%s/\(\n\)\n\+/\1/g<CR>:nohl<CR>gg
