@@ -42,7 +42,7 @@ _short_colored_git_status() {
     changed) letter="●";;
     pending) letter="●";;
     staged) letter="●";;
-    untracked) letter="●";;
+    untracked) letter="%F{11}●";;
     unchanged) letter="";;
   esac
 
