@@ -28,12 +28,6 @@ map <leader>n :call RenameFile()<cr>
 
 nnoremap <Leader>g :Ag<Space>
 
-" Turn off arrow keys
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
-
 " Buffer navigation
 nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
@@ -59,7 +53,6 @@ nnoremap <S-o> jO<Esc>2k<CR>
 " Disable K looking stuff up
 nnoremap K <Nop>
 
-nnoremap a <Nop>
 "
 " no ex mode
 map Q <Nop>
